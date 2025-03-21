@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev1.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <Style x:Key="CalculatorButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#ADD8E6"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="WidthRequest" Value="60"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*">
+        <Label x:Name="ResultLabel"
+               Grid.Row="0"
+               Grid.Column="0"
+               FontSize="48"
+               TextColor="Black"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"
+               Padding="10"
+               Text="0"/>
+
+        <Grid Grid.Row="1" Padding="10" RowSpacing="5" ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="%" Grid.Row="0" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+            <Button Text="CE" Grid.Row="0" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="TemizleGirisButonu"/>
+            <Button Text="C" Grid.Row="0" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="TemizleButonu"/>
+            <Button Text="⌫" Grid.Row="0" Grid.Column="3" Style="{StaticResource CalculatorButton}" Clicked="GeriSilButonu"/>
+
+            <Button Text="1/x" Grid.Row="1" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="TersiniAlButonu"/>
+            <Button Text="x²" Grid.Row="1" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="KaresiniAlButonu"/>
+            <Button Text="²√x" Grid.Row="1" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="KarekokAlButonu"/>
+            <Button Text="÷" Grid.Row="1" Grid.Column="3" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+
+            <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="9" Grid.Row="2" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="×" Grid.Row="2" Grid.Column="3" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+
+            <Button Text="4" Grid.Row="3" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="5" Grid.Row="3" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="6" Grid.Row="3" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+
+            <Button Text="1" Grid.Row="4" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="2" Grid.Row="4" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="3" Grid.Row="4" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+
+            <Button Text="+/-" Grid.Row="5" Grid.Column="0" Style="{StaticResource CalculatorButton}" Clicked="IslemButonu"/>
+            <Button Text="0" Grid.Row="5" Grid.Column="1" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="," Grid.Row="5" Grid.Column="2" Style="{StaticResource CalculatorButton}" Clicked="SayiButonu"/>
+            <Button Text="=" Grid.Row="5" Grid.Column="3" BackgroundColor="#3B82F6" TextColor="White" FontSize="24" Clicked="EsittirButonu"/>
+        </Grid>
+    </Grid>
+</ContentPage>
